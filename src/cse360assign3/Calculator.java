@@ -25,7 +25,8 @@ public class Calculator {
 	 * @author Benjamin Smith (PIN 810) CSE 360 Spring 2016
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
+		//return 0;
 	}
 	
 	/**
@@ -34,7 +35,7 @@ public class Calculator {
 	 * @author Benjamin Smith (PIN 810) CSE 360 Spring 2016
 	 */
 	public void add (int value) {
-		
+		total = value + total;
 	}
 	
 	/**
@@ -43,7 +44,7 @@ public class Calculator {
 	 * @author Benjamin Smith (PIN 810) CSE 360 Spring 2016
 	 */
 	public void subtract (int value) {
-		
+		total = total - value;
 	}
 	
 	/**
@@ -52,7 +53,7 @@ public class Calculator {
 	 * @author Benjamin Smith (PIN 810) CSE 360 Spring 2016
 	 */
 	public void multiply (int value) {
-		
+		total = total * value;
 	}
 	
 	/**
@@ -61,7 +62,10 @@ public class Calculator {
 	 * @author Benjamin Smith (PIN 810) CSE 360 Spring 2016
 	 */
 	public void divide (int value) {
-		
+		if (value == 0)
+			total = 0;
+		else
+		total = total / value;
 	}
 	
 	/**
