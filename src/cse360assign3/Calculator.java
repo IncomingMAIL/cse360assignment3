@@ -10,6 +10,9 @@ public class Calculator {
 	/**int for use in calculations. */
 	private int total;
 	
+	/**string to track calculator input/output history */
+	private String history;
+	
 	/**
       * Constructor for initializing the calculator object.
 	  * @author Benjamin Smith (PIN 810) CSE 360 Spring 2016
@@ -17,6 +20,7 @@ public class Calculator {
       */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history = "0";
 	}
 	
 	/**
@@ -26,7 +30,6 @@ public class Calculator {
 	 */
 	public int getTotal () {
 		return total;
-		//return 0;
 	}
 	
 	/**
@@ -36,6 +39,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total = value + total;
+		history = history + " + " + value;
 	}
 	
 	/**
@@ -45,6 +49,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total = total - value;
+		history = history + " - " + value;
 	}
 	
 	/**
@@ -54,6 +59,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total = total * value;
+		history = history + " * " + value;
 	}
 	
 	/**
@@ -64,8 +70,10 @@ public class Calculator {
 	public void divide (int value) {
 		if (value == 0)
 			total = 0;
-		else
+		else {
 		total = total / value;
+		}
+		history = history + " / " + value;
 	}
 	
 	/**
@@ -74,6 +82,6 @@ public class Calculator {
 	 * @author Benjamin Smith (PIN 810) CSE 360 Spring 2016
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
